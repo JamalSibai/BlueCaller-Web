@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function Header() {
+function AdminHeader() {
   return (
     <header id="header" className="header-one">
       <div className="site-navigation">
@@ -21,35 +21,17 @@ function Header() {
                       </a>
                     </li>
                   </ul>
-                  {/* <ul className="nav navbar-nav mr-auto">
-                      <li className="nav-item dropdown active"></li>
-                    </ul>
-                    <ul className="nav navbar-nav mr-auto">
-                      <li className="nav-item dropdown active">
-                        
-                      </li>
-                    </ul> */}
                 </div>
               </nav>
             </div>
             {/* <!--/ Col end --> */}
           </div>
           {/* <!--/ Row end --> */}
-
-          <div className="nav-search">
-            <a href="/login" className="nav navbar-nav mr-auto">
-              Admin
-            </a>
-          </div>
-          {/* <!-- Search end --> */}
-
-          {/* <!-- Site search end --> */}
         </div>
-        {/* <!--/ Container end --> */}
       </div>
       {/* <!--/ Navigation end --> */}
     </header>
   );
 }
 
-export default Header;
+export default AdminHeader;

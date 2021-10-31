@@ -21,8 +21,8 @@ function LoginInputs() {
       return alert("Enter Password");
     }
     try {
-      axios
-        .post(`https://bluecaller.tk/api/auth/login`, {
+      await axios
+        .post(`https://bluecaller.tk/api/auth/adminLogin`, {
           email: email,
           password: password,
         })
@@ -33,17 +33,19 @@ function LoginInputs() {
           window.location.href = "/adminHome";
         });
     } catch (err) {
-      alert("Wrong Email or Password!");
       console.log(err);
+    }
+    if (!localStorage.getItem("token")) {
+      alert("Invalid credentials");
     }
   };
 
   return (
     <section id="main-container" className="main-container">
       <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            {/* <h3 className="column-title">Admin</h3> */}
+        <div className="row ">
+          <div className="col-md-3"></div>
+          <div className="col-md-6 ">
             <div id="contact-form">
               <div className="error-container"></div>
               <div>

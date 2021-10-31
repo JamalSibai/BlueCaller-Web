@@ -27,6 +27,14 @@ img {
 
   margin-bottom: 25px;
 }
+.centerlogin {
+  margin: 20px 0;
+  padding: 0;
+  /* text-align: center; */
+  /* background: #f9f9f9; */
+  padding-left: 50;
+  align-self: center;
+}
 
 body,
 p {
@@ -222,6 +230,7 @@ a:focus {
 .bg-overlay .container {
   position: relative;
   z-index: 1;
+  margin-left: 50;
 }
 
 .bg-overlay:after {
@@ -2994,11 +3003,38 @@ img.testimonial-thumb {
   position: relative;
   padding: 30px 20px;
 }
+.ts-pricing-box .ts-pricing-header-delete {
+  background: #252525;
+  color: #fff;
+  position: relative;
+  padding: 30px 20px;
+}
+
+.delete {
+  background: red;
+  color: #fff;
+  position: relative;
+  padding: 10px 10px;
+}
 
 .ts-pricing-box .ts-pricing-name {
   font-size: 18px;
   line-height: normal;
   margin: 0 0 5px 0;
+  color: #fff;
+}
+.ts-pricing-box .ts-pricing-delete {
+  font-size: 18px;
+  line-height: normal;
+  margin: 0 0 5px 0;
+  padding: left 50%;
+  color: #fff;
+}
+.deletetxt {
+  font-size: 18px;
+  line-height: normal;
+  margin: 0 0 5px 0;
+  padding: left 50%;
   color: #fff;
 }
 

@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import axios from "axios";
 
-import Header from "../components/header";
+import AdminHeader from "../components/adminheader";
 import Footer from "../components/footer";
 import SecondHeader from "../components/secondHeader";
 import FreelancerCard from "../components/freelancerCard";
@@ -12,9 +12,9 @@ function AdminHome() {
     console.log(localStorage.getItem("token"));
     getFreelancers();
     // console.log("token", token);
-    // if (token == null) {
-    //   window.location.href = "/login";
-    // }
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/login";
+    }
   }, []);
 
   const getFreelancers = async () => {
@@ -32,19 +32,26 @@ function AdminHome() {
       });
   };
 
+  function remove(idsent) {
+    console.log("in adminHome" + idsent);
+    const newdata = data.filter((requests) => requests.id != idsent);
+    setData(newdata);
+    console.log(newdata);
+  }
+
   return (
     <div>
-      <Header />
+      <AdminHeader />
       <SecondHeader props={"Admin"} />
       <section id="main-container" className="main-container">
         <div className="container">
-          <div class="col-12">
-            <h2 class="section-title">Freelancers</h2>
-            <h3 class="section-sub-title">Find Freelancers Appointments</h3>
+          <div className="col-12">
+            <h2 className="section-title">Freelancers</h2>
+            <h3 className="section-sub-title">Find Freelancers Appointments</h3>
           </div>
-          <div class="row">
+          <div className="row">
             {data.map((item) => (
-              <FreelancerCard props={item} />
+              <FreelancerCard props={item} key={item.id} function={remove} />
             ))}
           </div>
         </div>
